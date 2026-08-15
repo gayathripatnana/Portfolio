@@ -1,0 +1,274 @@
+% ============================================================
+%  Patnana Gayathri — ATS-Friendly Two-Column Resume
+%  Left  col : Summary · Internship & Training · Education · Skills · Courses & Certifications
+%  Right col : Projects
+%  Compiler  : pdflatex
+% ============================================================
+
+\documentclass[10pt, a4paper]{article}
+
+% ---------- Page geometry ----------
+\usepackage[
+  top=0.35in, bottom=0.35in,
+  left=0.45in, right=0.45in
+]{geometry}
+
+% ---------- Fonts ----------
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% ---------- Colours ----------
+\usepackage[dvipsnames]{xcolor}
+\definecolor{accent}{RGB}{26, 58, 92}
+\definecolor{accent2}{RGB}{46, 109, 164}
+\definecolor{rulecol}{RGB}{180, 200, 220}
+\definecolor{mutedtext}{RGB}{80, 80, 80}
+
+% ---------- Two-column layout ----------
+\usepackage{paracol}
+\columnratio{0.55}          % left col = 58%, right col = 42%
+\setlength{\columnsep}{0.22in}
+
+% ---------- Misc packages ----------
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage[
+  pdftitle={Patnana Gayathri Resume},
+  pdfauthor={Patnana Gayathri},
+  colorlinks=true,
+  urlcolor=accent2,
+  linkcolor=accent2
+]{hyperref}
+\usepackage{microtype}
+
+% ---------- No header/footer ----------
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{0.94}\selectfont
+
+% ---------- Section title ----------
+\newcommand{\rsection}[1]{%
+  \vspace{4pt}%
+  {\color{accent}\textbf{\small\MakeUppercase{#1}}}\\[-5pt]%
+  {\color{rulecol}\rule{\linewidth}{0.8pt}}%
+  \vspace{2.5pt}%
+}
+
+% ---------- Sidebar skill label ----------
+\newcommand{\skilllabel}[1]{%
+  \vspace{2.5pt}%
+  {\footnotesize\textbf{\color{accent}#1}}\\[1pt]%
+}
+
+% ---------- Entry: title / date / subtitle ----------
+\newcommand{\entry}[3]{%
+  \noindent
+  {\small\textbf{\color{accent}#1}}\hfill{\footnotesize\color{mutedtext}#2}\\[-3pt]%
+  {\footnotesize\color{mutedtext}#3}%
+  \vspace{1pt}%
+}
+
+% ---------- Project entry: title / date (fixed-width boxes so long
+%             titles wrap instead of colliding with the date) / subtitle ----------
+\newcommand{\pentry}[3]{%
+  \noindent
+  \begin{minipage}[t]{0.70\linewidth}
+    {\small\textbf{\color{accent}#1}}
+  \end{minipage}\hfill%
+  \begin{minipage}[t]{0.28\linewidth}
+    \raggedleft{\footnotesize\color{mutedtext}#2}
+  \end{minipage}\\[2pt]%
+  {\footnotesize\color{mutedtext}#3}%
+  \vspace{2pt}%
+}
+
+% ---------- Bullet list ----------
+\setlist[itemize]{
+  noitemsep, topsep=1pt, partopsep=0pt, itemsep=0.5pt,
+  leftmargin=11pt, labelsep=3pt, label={\small\textbullet}
+}
+
+% ============================================================
+\begin{document}
+
+% =================== FULL-WIDTH HEADER ======================
+\noindent
+\begin{minipage}{\textwidth}
+  \begin{center}
+    {\LARGE\textbf{\color{accent}Patnana Gayathri}}\\[3pt]
+    {\small\color{mutedtext}AI / ML Engineer}\\[5pt]
+    \footnotesize
+    \faPhone\;\href{tel:+916304541430}{+91 63045 41430}\quad
+    \faEnvelope\;\href{mailto:gayathri.patnana1729@gmail.com}{gayathri.patnana1729@gmail.com}\quad
+    \faMapMarker*\;Hyderabad, Telangana\\[2pt]
+    \faLinkedin\;\href{https://www.linkedin.com/in/gayathri-patnana-225b27224}{linkedin.com/in/gayathri-patnana}\quad
+    \faGithub\;\href{https://github.com/gayathripatnana}{github.com/gayathripatnana}\quad
+    \faGlobe\;\href{https://gayathripatnana.vercel.app}{gayathripatnana.vercel.app}
+  \end{center}
+\end{minipage}
+
+\vspace{4pt}
+{\color{rulecol}\rule{\textwidth}{1pt}}
+\vspace{2pt}
+
+% =================== TWO COLUMNS ============================
+\begin{paracol}{2}
+
+% ============================================================
+%  LEFT COLUMN  —  Summary · Internship & Training · Education
+% ============================================================
+
+% ----- Summary -----
+\rsection{Summary}
+{\small\color{mutedtext}
+AI/ML Engineer who has shipped \textbf{10+ production AI/ML projects} -- spanning
+voice agents, generative AI, computer vision, and health tech -- skilled in building
+production-grade, multimodal intelligence systems. Experienced in full-stack AI
+pipelines integrating LLMs, RAG, and real-time data with Python, Firebase, and React
+Native. Passionate about designing voice-driven, context-aware applications that
+bridge deep learning and user experience.
+}
+
+% ----- Internship & Training -----
+\rsection{Experience}
+
+\entry{AI ML Intern \& Full Time (Onsite) -- Dot eVentures Pvt. Ltd.}{Feb 2025 -- Present}{Hyderabad, Telangana}
+\begin{itemize}
+  \item Developed and deployed \textbf{production-grade AI/ML systems} across domains including sales automation, voice intelligence, health tech, and language learning.
+  \item Worked extensively on \textbf{LLM integration, RAG pipelines, and real-time STT/TTS} to build conversational and context-aware applications.
+  \item Delivered end-to-end solutions spanning \textbf{mobile (React Native), backend (Flask, FastAPI), and cloud (Firebase)} with live user-facing deployments.
+\end{itemize}
+
+\vspace{5pt}
+\entry{Summer Intern -- NIT Puducherry}{May -- June 2024}{Karaikal, Pondicherry \textbar\ 2 months}
+\begin{itemize}
+  \item Implemented ML models achieving strong DTI prediction accuracy using proteinBERT \& chemBERT features.
+  \item Benchmarked \textbf{DTA binding affinity} on Davis \& Metz datasets; tools: Python, Scikit-learn.
+\end{itemize}
+
+% ----- Education -----
+\rsection{Education}
+
+\noindent{\small\textbf{\color{accent}RGUKT IIIT Srikakulam}}\hfill{\footnotesize\color{mutedtext}Nov 2021 -- May 2025}\\
+{\small B.Tech -- Computer Science \& Engineering}\hfill{\small\textbf{GPA: 9.22 / 10.0}}
+
+\vspace{6pt}
+\noindent{\small\textbf{\color{accent}RGUKT IIIT Srikakulam}}\hfill{\footnotesize\color{mutedtext}Sept 2019 -- Oct 2021}\\
+{\small Pre-University Course (PUC)}\hfill{\small\textbf{GPA: 9.84 / 10.0}}
+
+\vspace{6pt}
+\noindent{\small\textbf{\color{accent}Z.P.H. School, Makkuva}}\hfill{\footnotesize\color{mutedtext}June 2014 -- May 2019}\\
+{\small Secondary Education (10th)}\hfill{\small\textbf{GPA: 10.0 / 10.0}}
+
+% ----- Skills -----
+\rsection{Skills}
+
+\skilllabel{ML \& AI}
+{\footnotesize OpenAI, Gemini, Whisper, ChromaDB, Hugging Face, LangChain, Scikit-learn, NumPy, Pandas, TensorFlow, PyTorch}
+
+\skilllabel{Web \& Mobile}
+{\footnotesize React, React Native, Flask, FastAPI, REST APIs, HTML, CSS, Firebase, Supabase}
+
+\skilllabel{Programming Languages}
+{\footnotesize C, Python, JavaScript, MySQL}
+
+\skilllabel{Tools \& Platforms}
+{\footnotesize Git, GitHub, Postman, Jupyter Notebook, Google Colab, VS Code, Replit, Vercel, Railway, Razorpay, AWS}
+
+% ----- Courses & Certifications -----
+\rsection{Courses \& Certifications}
+
+{\footnotesize\textbf{Generative AI Mastery}}\hfill{\footnotesize\color{mutedtext}Udemy, Jan 2025}\\[1pt]
+{\footnotesize LLMs, transformers, vector databases, fine-tuning; built chatbots \& stock
+analysis tools using HuggingFace, OpenAI, LangChain.}
+
+\vspace{2.5pt}
+{\footnotesize\textbf{ChatGPT Prompt Engineering Mastery}}\hfill{\footnotesize\color{mutedtext}Udemy, Dec 2024}\\[1pt]
+{\footnotesize Crafting effective AI prompts to optimise model performance and precise outputs.}
+
+\vspace{2.5pt}
+{\footnotesize\textbf{Machine Learning -- Internshala}}\hfill{\footnotesize\color{mutedtext}IIT-Madras Certified, May--Jun 2022}\\[1pt]
+{\footnotesize 6-week ML training program; scored \textbf{83\%} in the final test.}
+
+% ============================================================
+%  RIGHT COLUMN  —  Projects
+% ============================================================
+\switchcolumn
+
+% ----- Projects -----
+\rsection{Projects}
+\footnotesize
+
+% Thapasya Bangles
+\pentry{Thapasya Bangles -- E-Commerce Website}{2026}{\href{https://thapasyabangles.vercel.app}{\faLink\,thapasyabangles.vercel.app}}
+\begin{itemize}
+  \item Built a complete product catalog with categories, image galleries, and detail pages for each design.
+  \item Implemented a smooth, mobile-first browsing and ordering flow from catalog to checkout.
+  \item Integrated \textbf{Razorpay} for secure, real-time online payments at checkout.
+  \item Deployed on \textbf{Vercel} with \textbf{Firebase} for data/content and \textbf{Railway} hosting backend services -- a live production storefront.
+  \item \textbf{Tech:} React, Firebase, Railway, Razorpay, Vercel.
+\end{itemize}
+
+\vspace{7pt}
+% Selll
+\pentry{Selll -- Sales CRM App (iOS, Android \& Web)}{Jun -- Sept 2025}{@ Dot eVentures \quad
+  \href{https://selll.in}{\faLink\,selll.in} \textbar\
+  \href{https://play.google.com/store/apps/details?id=com.classesssalescrm}{\faAndroid\,Play Store} \textbar\
+  \href{https://apps.apple.com/in/app/selll/id6752857425}{\faApple\,App Store}}
+\begin{itemize}
+  \item Built lead management, visit logging, and day in/out attendance tracking used daily by every field sales rep.
+  \item Delivered real-time analytics dashboards giving managers live visibility into team performance.
+  \item Designed and built an \textbf{AI-powered Product Training bot} (OpenAI) for instant product Q\&A.
+  \item Shipped as native apps on both the \textbf{Play Store} and \textbf{App Store}, plus a companion web experience.
+  \item \textbf{Tech:} React Native CLI, HTML/CSS/JS, Firebase, FastAPI, OpenAI APIs.
+\end{itemize}
+
+\vspace{7pt}
+% Classess
+\pentry{Classess -- AI-Enhanced School Management Platform}{2026 -- Present}{\href{https://classess.com}{\faLink\,classess.com}}
+\begin{itemize}
+  \item Working as \textbf{AI/ML Developer} building the intelligence layer behind assessments, analytics, and SEL (social-emotional learning) insights.
+  \item Built and integrated \textbf{APIs connecting core modules} (assessments, analytics, SEL insights) with AI-powered scoring and personalization logic.
+  \item Helping design scoring models that reduce manual grading effort for teachers while surfacing real-time insights.
+  \item \textbf{Tech:} React, FastAPI, Supabase, OpenAI.
+\end{itemize}
+
+\vspace{7pt}
+% LearnEng
+\pentry{LearnEng -- English Learning App Backend}{May -- Jun 2025}{@ Dot eVentures \quad \href{https://learneng.app}{\faLink\,learneng.app}}
+\begin{itemize}
+  \item Built backend APIs for all four \textbf{LSRW modules} with CEFR-aligned LLM-driven personalization per learner.
+  \item Implemented a multilingual chatbot to support learners practicing across different native languages.
+  \item Diagnosed and resolved a \textbf{Whisper hallucination} issue via a custom silence-detection algorithm, improving transcription reliability.
+  \item \textbf{Tech:} Flask, Whisper, OpenAI GPT-4o-mini, Firebase.
+\end{itemize}
+
+\vspace{7pt}
+% AIDr
+\pentry{AIDr. -- AI Health Analysis \& Chatbot}{Feb -- Apr 2025}{@ Dot eVentures Pvt. Ltd.}
+\begin{itemize}
+  \item Engineered backend APIs for \textbf{AI-driven health analysis} delivering personalized remedies, precautions, and prescription suggestions based on chronic conditions, allergies, and vitals.
+  \item Implemented a conversational chatbot for natural-language health queries and everyday self-care guidance.
+  \item Built the \textbf{GPT-4o prompting and response pipeline} to keep suggestions grounded and consistent.
+  \item \textbf{Tech:} Python, Flask, OpenAI GPT-4o, Firebase.
+\end{itemize}
+
+\vspace{7pt}
+% Calll
+\pentry{Calll -- AI Inbound \& Outbound Calling Agent}{2026}{@ Dot eVentures Pvt. Ltd.}
+\begin{itemize}
+  \item AI voice agents that \textbf{converse naturally over phone calls}, handling inbound queries and outbound campaigns without human intervention.
+  \item \textbf{Automated outbound call scheduling} for reminders, follow-ups, and engagement campaigns.
+  \item Integrated real-time STT/TTS pipelines with LLM conversation logic to keep latency low and dialogue natural.
+  \item \textbf{Tech:} Python, FastAPI, OpenAI, Whisper, TTS APIs, Firebase.
+\end{itemize}
+
+\vspace{5pt}
+{\footnotesize\color{mutedtext}\faLink\ 4+ more AI/ML projects (voice, computer vision, generative AI) at
+\href{https://gayathripatnana.vercel.app}{gayathripatnana.vercel.app}}
+
+\end{paracol}
+
+\end{document}
