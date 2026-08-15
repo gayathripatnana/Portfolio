@@ -110,6 +110,14 @@ body {
   backdrop-filter: blur(6px);
 }
 
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .grain::before {
   content: '';
   position: absolute;
