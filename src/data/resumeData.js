@@ -102,6 +102,7 @@ export const skills = [
     items: [
       'Git',
       'GitHub',
+      'Claude Code',
       'Postman',
       'Jupyter Notebook',
       'Google Colab',

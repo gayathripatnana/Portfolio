@@ -26,6 +26,7 @@ import {
   SiVercel,
   SiRailway,
   SiRazorpay,
+  SiClaude,
 } from 'react-icons/si';
 import { FaCss3Alt, FaAws } from 'react-icons/fa6';
 import { VscVscode } from 'react-icons/vsc';
@@ -59,6 +60,7 @@ export const skillIcons = {
   PyTorch: SiPytorch,
   Git: SiGit,
   GitHub: SiGithub,
+  'Claude Code': SiClaude,
   Postman: SiPostman,
   'Jupyter Notebook': SiJupyter,
   'Google Colab': SiGooglecolab,
