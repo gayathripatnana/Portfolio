@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FiMoon, FiSun } from 'react-icons/fi';
-import { profile } from '../data/resumeData';
 import { useTheme } from '../hooks/useTheme';
+import ResumeModal from './ResumeModal';
 
 const LINKS = [
   { href: '#about', label: 'About' },
@@ -15,6 +15,7 @@ const LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [resumeOpen, setResumeOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -57,14 +58,13 @@ export default function Navbar() {
             {theme === 'dark' ? <FiSun /> : <FiMoon />}
           </button>
 
-          <a
-            href={profile.resumeFile}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => setResumeOpen(true)}
             className="hidden rounded-full border border-line px-4 py-2 text-sm font-medium text-fg-strong transition-colors hover:border-accent-2 hover:text-accent-2 md:inline-block"
           >
             Resume
-          </a>
+          </button>
 
           <button
             onClick={() => setOpen((o) => !o)}
@@ -98,18 +98,22 @@ export default function Navbar() {
               </li>
             ))}
             <li>
-              <a
-                href={profile.resumeFile}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  setResumeOpen(true);
+                }}
                 className="inline-block rounded-full border border-line px-4 py-2 text-sm font-medium text-fg-strong"
               >
                 Resume
-              </a>
+              </button>
             </li>
           </ul>
         </div>
       )}
+
+      <ResumeModal open={resumeOpen} onClose={() => setResumeOpen(false)} />
     </header>
   );
 }
