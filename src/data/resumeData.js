@@ -72,6 +72,7 @@ export const skills = [
       'ChromaDB',
       'Hugging Face',
       'LangChain',
+      'LangGraph',
       'Scikit-learn',
       'NumPy',
       'Pandas',
