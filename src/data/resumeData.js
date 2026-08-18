@@ -200,15 +200,20 @@ export const projects = [
     orgLink: 'https://doteventures.com',
     link: 'https://classess.com',
     linkLabel: 'classess.com',
-    tech: ['React', 'FastAPI', 'Supabase', 'OpenAI'],
+    tech: ['React', 'FastAPI', 'Supabase', 'OpenAI', 'Gemini', 'Razorpay'],
     summary:
       'An ed-tech platform helping schools reduce teacher burnout and streamline assessments through AI-driven, real-time insights — currently in active development.',
     highlights: [
       'Working as AI/ML Developer building the intelligence layer behind assessments, analytics, and SEL (social-emotional learning) insights.',
       'Built and integrated APIs connecting core modules — assessments, analytics, and SEL insights — with AI-powered scoring and personalization logic.',
+      'Designed LLM-driven AI agents for smart course building and automated evaluation, generating and assessing course content with minimal teacher input.',
+      'Implemented hyperlocalization so course content and interactions adapt to a student’s region and language.',
+      'Integrated Razorpay as the payment gateway for handling subscriptions and payments within the platform.',
+      'Contributed across several other core modules of the platform beyond assessments and analytics.',
       'Helping design scoring models that reduce manual grading effort for teachers while surfacing meaningful, real-time insights.',
     ],
-    role: 'AI/ML Developer, working on backend AI services and cross-module integration.',
+    role:
+      'AI/ML Developer — built LLM-driven agents (course building, evaluation), hyperlocalization, Razorpay payment integration, and cross-module backend integration.',
   },
   {
     id: 'learneng',
@@ -266,15 +271,55 @@ export const projects = [
     role: 'Designed and built the real-time voice pipeline and conversation orchestration.',
   },
   {
+    id: 'virtual-classroom',
+    name: 'Virtual Classroom Platform',
+    tagline: 'Live online classes with an AI teaching bot and engagement monitoring',
+    date: '2026',
+    org: 'Dot eVentures Pvt. Ltd.',
+    orgLink: 'https://doteventures.com',
+    link: null,
+    tech: ['Python', 'FastAPI', 'HTML', 'CSS', 'JavaScript'],
+    summary:
+      'A live video-conferencing platform built for education — like Zoom or Google Meet, purpose-built for the classroom — with an infinite canvas for teaching, an AI doubt-solving bot trained on the teacher’s own material, breakout rooms, and real-time student engagement monitoring.',
+    highlights: [
+      'Built live video classes with breakout rooms for small-group discussion and activities.',
+      'Designed an infinite canvas so teachers can write, draw, and explain concepts freely during a live session.',
+      'Built an AI doubt-solving bot trained on the teacher’s own material so students get instant, syllabus-grounded answers to their questions during and after class.',
+      'Implemented drowsiness detection, no-person (absence) detection, and hand-raise detection to monitor student engagement during live classes.',
+      'Automated real-time alerts to both the student and the teacher whenever drowsiness, absence, or a raised hand is detected.',
+    ],
+    role:
+      'Built the AI doubt-solving bot and the drowsiness/absence/hand-raise detection and alerting system, alongside the live classroom experience (breakout rooms, infinite canvas).',
+  },
+  {
+    id: 'product-pitch-bot',
+    name: 'Product Pitch Assistant',
+    tagline: 'RAG-powered product pitching & query-resolution bot',
+    date: '2026',
+    org: 'Dot eVentures Pvt. Ltd.',
+    orgLink: 'https://doteventures.com',
+    link: null,
+    tech: ['Python', 'FastAPI', 'OpenAI', 'RAG', 'ChromaDB'],
+    summary:
+      'A retrieval-augmented generation (RAG) bot that pitches products to users in conversation and resolves their follow-up questions in real time, grounding every response in the actual product knowledge base instead of generic chatbot answers.',
+    highlights: [
+      'Built a RAG pipeline over product documentation, specs, and FAQs so every pitch and answer stays grounded in accurate, up-to-date product knowledge.',
+      'Designed conversational flows that proactively pitch relevant products to users while naturally handling follow-up questions and objections.',
+      'Implemented real-time query resolution so users get context-aware, grounded answers instead of generic responses.',
+    ],
+    role: 'Designed and built the RAG pipeline and the conversational pitching/query-resolution logic end-to-end.',
+  },
+  {
     id: 'lipsync-generator',
     name: 'Lipsync Video Generator',
     tagline: 'Generates a lipsynced talking video from a photo and an audio clip',
     date: '2026',
-    org: null,
+    org: 'Dot eVentures Pvt. Ltd.',
+    orgLink: 'https://doteventures.com',
     link: null,
     tech: ['Python', 'FastAPI', 'SadTalker'],
     summary:
-      'An independent AI project that takes a single portrait image and an audio clip and generates a realistic lipsynced talking video of that image speaking the audio — built on top of the open-source SadTalker model.',
+      'An AI tool that takes a single portrait image and an audio clip and generates a realistic lipsynced talking video of that image speaking the audio — built on top of the open-source SadTalker model.',
     highlights: [
       'Built a FastAPI service that accepts an image and an audio file and returns a rendered lipsync video.',
       'Integrated the open-source SadTalker repository for facial animation and lip-sync generation from a single photo.',
@@ -288,7 +333,8 @@ export const projects = [
     name: 'Homework Scanner',
     tagline: 'AI-powered answer sheet scanner and auto-grader for exam evaluation',
     date: '2026',
-    org: null,
+    org: 'Dot eVentures Pvt. Ltd.',
+    orgLink: 'https://doteventures.com',
     link: null,
     tech: ['OpenAI', 'JavaScript', 'HTML', 'CSS', 'FastAPI'],
     summary:
@@ -307,11 +353,12 @@ export const projects = [
     name: 'AI Educational Video Generator',
     tagline: 'Turns any topic into a narrated educational video',
     date: '2026',
-    org: null,
+    org: 'Dot eVentures Pvt. Ltd.',
+    orgLink: 'https://doteventures.com',
     link: null,
     tech: ['Python', 'FastAPI'],
     summary:
-      'An independent tool that takes any topic as input and automatically generates a complete educational video explaining it — built for quick, on-demand learning content.',
+      'A tool that takes any topic as input and automatically generates a complete educational video explaining it — built for quick, on-demand learning content.',
     highlights: [
       'Built a generation pipeline that takes a topic and produces a script, narration, and visuals for an explanatory video.',
       'Exposed the entire generation pipeline through a FastAPI backend, from topic input to final rendered video.',
@@ -323,11 +370,12 @@ export const projects = [
     name: 'AI Presentation Generator',
     tagline: 'Generates a full explanatory presentation from a topic using Gemini',
     date: '2026',
-    org: null,
+    org: 'Dot eVentures Pvt. Ltd.',
+    orgLink: 'https://doteventures.com',
     link: null,
     tech: ['Gemini', 'Python', 'FastAPI'],
     summary:
-      'An independent tool that takes any topic and generates a complete explanatory presentation — powered by Gemini to structure and write the content slide by slide.',
+      'A tool that takes any topic and generates a complete explanatory presentation — powered by Gemini to structure and write the content slide by slide.',
     highlights: [
       'Used Gemini to break down a given topic into a structured, slide-by-slide explanatory presentation.',
       'Built the generation pipeline and API to turn a single topic input into a ready-to-present deck.',
